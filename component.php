@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomla.Site
- * @subpackage  Templates.cassiopeia
+ * @subpackage  Templates.dp_template_j5
  *
  * @copyright   (C) 2017 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -35,10 +35,10 @@ if ($paramsFontScheme) {
         $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, [], ['rel' => 'lazy-stylesheet', 'crossorigin' => 'anonymous']);
 
         if (preg_match_all('/family=([^?:]*):/i', $paramsFontScheme, $matches) > 0) {
-            $fontStyles = '--cassiopeia-font-family-body: "' . str_replace('+', ' ', $matches[1][0]) . '", sans-serif;
-			--cassiopeia-font-family-headings: "' . str_replace('+', ' ', $matches[1][1] ?? $matches[1][0]) . '", sans-serif;
-			--cassiopeia-font-weight-normal: 400;
-			--cassiopeia-font-weight-headings: 700;';
+            $fontStyles = '--dp_template_j5-font-family-body: "' . str_replace('+', ' ', $matches[1][0]) . '", sans-serif;
+			--dp_template_j5-font-family-headings: "' . str_replace('+', ' ', $matches[1][1] ?? $matches[1][0]) . '", sans-serif;
+			--dp_template_j5-font-weight-normal: 400;
+			--dp_template_j5-font-weight-headings: 700;';
         }
     } else {
         $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, ['version' => 'auto'], ['rel' => 'lazy-stylesheet']);
@@ -47,7 +47,7 @@ if ($paramsFontScheme) {
 }
 
 // Enable assets
-$wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
+$wa->usePreset('template.dp_template_j5.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
     ->useStyle('template.active.language')
     ->useStyle('template.user')
     ->useScript('template.user')
@@ -63,7 +63,7 @@ $wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'l
 
 
 // Override 'template.active' asset to set correct ltr/rtl dependency
-$wa->registerStyle('template.active', '', [], [], ['template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
+$wa->registerStyle('template.active', '', [], [], ['template.dp_template_j5.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
 // Browsers support SVG favicons
 $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);

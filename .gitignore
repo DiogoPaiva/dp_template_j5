@@ -1,2 +1,47 @@
-# Ignorar todas as pastas node_modules em qualquer diretório
+# 🔁 Node / Yarn
 **/node_modules/
+.yarn/
+.pnp.*
+.yarnrc.yml
+
+# ⚙️ Ficheiros de build
+**/css/*.css
+**/css/*.css.map
+**/css/*.min.css
+**/js/*.min.js
+
+# 🧵 Sass cache
+.sass-cache/
+**/.sass-cache/
+
+# 🔧 IDEs e editores comuns
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 💻 Ficheiros do sistema
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# 📦 Pacotes / compressão
+*.zip
+*.tar.gz
+
+# 🐞 Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 📄 Backups temporários
+*~
+*.bak
+*.tmp
+*.swp
+*.swx
+
+# 🧪 Tests / coverage (caso venhas a usar)
+coverage/

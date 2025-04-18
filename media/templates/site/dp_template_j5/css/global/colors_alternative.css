@@ -1,10 +1,18 @@
-@charset "UTF-8";
-:root {
-  --cassiopeia-color-primary: #912b3b;
-  --cassiopeia-color-link: #30638d;
-  --link-color: #30638d;
-  --link-color-rgb: 48, 99, 141;
-  --cassiopeia-color-hover: #954b56;
-  --link-hover-color: #954b56;
-  --link-hover-color-rgb: 149, 75, 86;
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 2 | @import "../../../../../vendor/bootstrap/scss/functions";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   scss\tools\_tools.scss 2:9               @import
+ *   scss\global\colors_alternative.scss 2:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @import \"../../../../../vendor/bootstrap/scss/functions\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\tools\\_tools.scss 2:9               @import\a   scss\\global\\colors_alternative.scss 2:9  root stylesheet";
 }

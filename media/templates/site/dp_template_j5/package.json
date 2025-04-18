@@ -1,0 +1,13 @@
+{
+    "name": "dp-template-j5",
+    "version": "1.0.0",
+    "description": "Template personalizado para Joomla 5 com SCSS",
+    "scripts": {
+      "scss": "sass scss:css --style=compressed --no-source-map --watch"
+    },
+    "devDependencies": {
+      "sass": "^1.74.0"
+    },
+    "author": "Diogo Paiva",
+    "license": "MIT"
+  }

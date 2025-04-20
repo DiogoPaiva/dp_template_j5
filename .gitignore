@@ -10,6 +10,8 @@
 **/css/*.css.map
 **/css/*.min.css
 **/js/*.min.js
+/build/*.css
+/build/*.css.map
 
 # 🧵 Sass cache
 .sass-cache/

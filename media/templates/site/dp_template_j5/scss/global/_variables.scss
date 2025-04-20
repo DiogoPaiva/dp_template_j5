@@ -1,4 +1,4 @@
-@use "sass:color";
+
 
 // Remove prefix added in BS5 for compat with Joomla beta's shipped with Betas
 $prefix: "";
@@ -27,7 +27,7 @@ $alternative-color-primary:           hsl(351, 54%, 37%) !default;
 $alternative-color-link:              hsl(207, 49%, 37%) !default;
 $alternative-color-hover:             hsl(351, 33%, 44%) !default;
 
-$white:                               hsl(0, 0%, 100%) !default;
+$white:                               #fff;
 $gray-100:                            hsl(210, 17%, 98%) !default;
 $gray-200:                            hsl(210, 16%, 93%) !default;
 $gray-300:                            hsl(210, 14%, 89%) !default;
@@ -123,7 +123,7 @@ $dp_template-colors: (
   template-text-light:                 $white,
   template-special-color:              #132f53,
   template-link-color:                 #2a69b8,
-  template-link-hover-color:           color.adjust(#2a69b8, $lightness: -20%),
+  template-link-hover-color:           #2a69b8,
   template-contrast:                   #2a69b8,
   template-bg-dark:                    hsl(var(--hue), 40%, 20%),
   template-bg-dark-3:                  hsl(var(--hue), 40%, 97%),
@@ -241,7 +241,7 @@ $nav-link-height:                     1.5rem + $nav-link-padding-y * 2 !default;
 // Cards
 $dp_template-card-title-bg:            $dp_template-block-header-bg !default;
 $dp_template-card-title-icon-bg:       $dp_template-block-header-bg !default;
-$dp_template-card-title-icon-bg-hover: scale-color($dp_template-card-title-bg, $lightness: 2%) !default;
+$dp_template-card-title-icon-bg-hover:  #2a69b8;
 $card-bg-color-light:                 $gray-100 !default;
 $card-bg-color-dark:                  var(--dp_template-color-primary) !default;
 $card-border-color:                   $dp_template-border-color !default;
@@ -259,19 +259,19 @@ $accordion-button-active-color:       shade-color($standard-color-primary, 10%) 
 // Alerts
 $state-success-text:                  $white !default;
 $state-success-bg:                    $success !default;
-$state-success-border:                scale-color($success, $lightness: -5%) !default;
+$state-success-border:                 #2a69b8;
 
 $state-info-text:                     $white !default;
 $state-info-bg:                       $info !default;
-$state-info-border:                   scale-color($info, $lightness: -7%) !default;
+$state-info-border:                   #2a69b8;
 
 $state-warning-text:                  $white !default;
 $state-warning-bg:                    $warning !default;
-$state-warning-border:                scale-color($warning, $lightness: -5%) !default;
+$state-warning-border:                #2a69b8;
 
 $state-danger-text:                   $white !default;
 $state-danger-bg:                     $danger !default;
-$state-danger-border:                 scale-color($danger, $lightness: -5%) !default;
+$state-danger-border:                  #2a69b8;
 
 // Mark element
 $mark-padding: .1875em 0;
@@ -285,3 +285,16 @@ $border-radius-lg: .3rem !default;
 $border-radius-xl: .3rem !default;
 $border-radius-2xl: .3rem !default;
 // scss-docs-end border-radius-variables
+$h4-font-size: 14px;
+
+:root {
+  --dp_template-color-primary: #{$standard-color-primary};
+  // @deprecated --casiopeia-color-link is deprecated in favour of --link-color
+  --dp_template-color-link: #{$standard-color-link};
+  --link-color: #{$standard-color-link};
+  --link-color-rgb: #{to-rgb($standard-color-link)};
+  --dp_template-color-hover: #{$standard-color-hover};
+  --link-hover-color: #{$standard-color-hover};
+  --link-hover-color-rgb: #{to-rgb($standard-color-hover)};
+}
+

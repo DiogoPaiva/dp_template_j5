@@ -3,8 +3,11 @@
     "version": "1.0.0",
     "description": "Template personalizado para Joomla 5 com SCSS",
     "scripts": {
-      "scss": "sass scss:css --style=compressed --no-source-map --watch"
-    },
+  "scss-dev": "sass scss:css --watch --style=expanded",
+  "scss-prod": "yarn scss:build-template && yarn scss:build-client",
+  "scss:build-template": "sass scss/template.scss build/template.css --style=compressed --source-map",
+  "scss:build-client": "sass scss/site/frame.scss build/frame.css --style=compressed --source-map"
+},
     "devDependencies": {
       "sass": "^1.74.0"
     },

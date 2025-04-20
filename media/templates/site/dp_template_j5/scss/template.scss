@@ -1,31 +1,3 @@
-// Bootstrap functions
-@use "tools/variables/variables";
 
+@use "global/tools" as *;
 
-// Variables, Functions and Mixins
-@use "tools/tools";
-
-// Bootstrap
-//@use "../../../../vendor/bootstrap/scss/bootstrap";
-
-
-// Blocks
-@use "blocks/global"; // Leave this first
-@use "blocks/alerts";
-@use "blocks/back-to-top";
-@use "blocks/banner";
-@use "blocks/menu";
-@use "blocks/footer";
-@use "blocks/form";
-@use "blocks/frontend-edit";
-@use "blocks/header";
-@use "blocks/icons";
-@use "blocks/iframe";
-@use "blocks/layout";
-@use "blocks/modals";
-@use "blocks/modifiers";
-@use "blocks/utilities";
-@use "blocks/toolbar";
-@use "blocks/legacy";
-@use "blocks/tags";
-@use "blocks/css-grid"; // Last to allow fallback

@@ -1,15 +1,15 @@
 // Footer
 
 .footer {
-  margin-top: $cassiopeia-grid-gutter;
+  margin-top: $dp_template-grid-gutter;
   color: $white;
-  background-color: var(--cassiopeia-color-primary);
-  background-image: $cassiopeia-header-grad #{"/* rtl:"}$cassiopeia-header-grad-rtl #{"*/"};
+  background-color: var(--dp_template-color-primary);
+  background-image: $dp_template-header-grad #{"/* rtl:"}$dp_template-header-grad-rtl #{"*/"};
 
   .grid-child {
     align-items: center;
     justify-content: space-between;
-    padding: 2.5rem ($cassiopeia-grid-gutter * .5);
+    padding: 2.5rem ($dp_template-grid-gutter * .5);
   }
 
   a:not(.btn), .btn-link {
@@ -28,7 +28,7 @@
   @if $metismenu==true {
     .metismenu.mod-menu {
       .mm-collapse {
-        background: var(--cassiopeia-color-primary);
+        background: var(--dp_template-color-primary);
       }
     }
   }

@@ -115,9 +115,9 @@ td .form-control {
 }
 
 fieldset {
-  margin-bottom: $cassiopeia-grid-gutter*2;
+  margin-bottom: $dp_template-grid-gutter*2;
   + fieldset {
-    margin-top: $cassiopeia-grid-gutter*2;
+    margin-top: $dp_template-grid-gutter*2;
   }
 
   > * {
@@ -126,7 +126,7 @@ fieldset {
 }
 
 .control-group {
-  margin: $cassiopeia-grid-gutter 0;
+  margin: $dp_template-grid-gutter 0;
 }
 .container-popup .filter-search-bar__description {
   top: 100%;
@@ -134,7 +134,7 @@ fieldset {
 }
 
 .com-users-login__options {
-  margin-top: $cassiopeia-grid-gutter*2;
+  margin-top: $dp_template-grid-gutter*2;
 }
 
 .com-users-profile__edit,

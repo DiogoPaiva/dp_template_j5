@@ -7,11 +7,11 @@
   inset-inline-end: 1rem;
   bottom: 1rem;
   z-index: 10000;
-  padding: $cassiopeia-grid-gutter * .5;
-  color: var(--cassiopeia-color-primary, $standard-color-primary);
+  padding: 1 * .5;
+  color: var(--dp_template-color-primary, $standard-color-primary);
   pointer-events: all;
   background-color: var(--white, $white);
-  border: 1px solid var(--cassiopeia-color-primary, $standard-color-primary);
+  border: 1px solid var(--dp_template-color-primary, $standard-color-primary);
   border-radius: $border-radius;
   opacity: 0;
   transition: opacity 200ms ease-in;
@@ -23,7 +23,7 @@
   &:hover,
   &:focus {
     color: var(--white, $white);
-    background-color: var(--cassiopeia-color-hover);
+    background-color: var(--dp_template-color-hover);
     border-color: var(--white, $white);
   }
 }

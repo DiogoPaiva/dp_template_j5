@@ -7,13 +7,13 @@ $prefix: "";
 $enable-dark-mode: false;
 
 // Global
-$cassiopeia-container-main-bg:        hsl(0, 0%, 95%) !default;
-$cassiopeia-border-color:             hsl(210, 14%, 89%) !default;
-$cassiopeia-box-shadow:               1px 1px 4px hsla(0, 0%, 0%, .1) !default;
-$cassiopeia-block-header-bg:          hsl(0, 0%, 96%) !default;
-$cassiopeia-header-grad:              linear-gradient(135deg, var(--cassiopeia-color-primary) 0%, var(--cassiopeia-color-hover) 100%) !default;
-$cassiopeia-header-grad-rtl:          linear-gradient(135deg, var(--cassiopeia-color-hover) 0%, var(--cassiopeia-color-primary) 100%) !default;
-$cassiopeia-inverted-text-color:      var(--cassiopeia-color-hover) !default;
+$dp_template-container-main-bg:        hsl(0, 0%, 95%) !default;
+$dp_template-border-color:             hsl(210, 14%, 89%) !default;
+$dp_template-box-shadow:               1px 1px 4px hsla(0, 0%, 0%, .1) !default;
+$dp_template-block-header-bg:          hsl(0, 0%, 96%) !default;
+$dp_template-header-grad:              linear-gradient(135deg, var(--dp_template-color-primary) 0%, var(--dp_template-color-hover) 100%) !default;
+$dp_template-header-grad-rtl:          linear-gradient(135deg, var(--dp_template-color-hover) 0%, var(--dp_template-color-primary) 100%) !default;
+$dp_template-inverted-text-color:      var(--dp_template-color-hover) !default;
 
 // Color system
 
@@ -115,7 +115,7 @@ $colors: (
   toggle-color:                    $white, // used in sidebar
 ) !default;
 
-$cassiopeia-colors: (
+$dp_template-colors: (
   template-sidebar-bg:                 var(--template-bg-dark-80),
   template-sidebar-font-color:         $white,
   template-sidebar-link-color:         $white,
@@ -152,7 +152,7 @@ $breadcrumb-active-color:             $gray-700 !default;
 
 // Grid columns
 $grid-gutter-width:                   1em !default;
-$cassiopeia-grid-gutter:              $grid-gutter-width !default;
+$dp_template-grid-gutter:              $grid-gutter-width !default;
 
 // Components
 $fa-font-path:                        "../../../media/vendor/fontawesome-free/webfonts" !default;
@@ -164,11 +164,11 @@ $treeselect-line-height:              2.2rem !default;
 $metismenu:                           true !default;
 
 // Toolbar
-$cassiopeia-toolbar-line-height:      1.8rem !default;
+$dp_template-toolbar-line-height:      1.8rem !default;
 
 // Typography
 $font-family-sans-serif:             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-base:                    var(--cassiopeia-font-family-body, $font-family-sans-serif) !default;
+$font-family-base:                    var(--dp_template-font-family-body, $font-family-sans-serif) !default;
 
 // Icons
 $jicon-css-prefix:                    icon !default;
@@ -231,20 +231,20 @@ $zindex-mobile-menu:                  9000 !default;
 $nav-link-padding-y:                  .5rem !default;
 
 // Navs
-$cassiopeia-tabs-header-bg:           $cassiopeia-block-header-bg !default;
-$cassiopeia-tabs-active-bg:           hsla(0, 0%, 0%, .3) !default;
-$cassiopeia-tabs-active-highlight:    var(--cassiopeia-color-primary) !default;
+$dp_template-tabs-header-bg:           $dp_template-block-header-bg !default;
+$dp_template-tabs-active-bg:           hsla(0, 0%, 0%, .3) !default;
+$dp_template-tabs-active-highlight:    var(--dp_template-color-primary) !default;
 
 // Navbar
 $nav-link-height:                     1.5rem + $nav-link-padding-y * 2 !default;
 
 // Cards
-$cassiopeia-card-title-bg:            $cassiopeia-block-header-bg !default;
-$cassiopeia-card-title-icon-bg:       $cassiopeia-block-header-bg !default;
-$cassiopeia-card-title-icon-bg-hover: scale-color($cassiopeia-card-title-bg, $lightness: 2%) !default;
+$dp_template-card-title-bg:            $dp_template-block-header-bg !default;
+$dp_template-card-title-icon-bg:       $dp_template-block-header-bg !default;
+$dp_template-card-title-icon-bg-hover: scale-color($dp_template-card-title-bg, $lightness: 2%) !default;
 $card-bg-color-light:                 $gray-100 !default;
-$card-bg-color-dark:                  var(--cassiopeia-color-primary) !default;
-$card-border-color:                   $cassiopeia-border-color !default;
+$card-bg-color-dark:                  var(--dp_template-color-primary) !default;
+$card-border-color:                   $dp_template-border-color !default;
 
 // Badges
 $badge-default-bg:                    $gray-600 !default;

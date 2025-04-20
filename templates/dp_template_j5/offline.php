@@ -42,10 +42,10 @@ if ($paramsFontScheme) {
         $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, [], ['rel' => 'lazy-stylesheet', 'crossorigin' => 'anonymous']);
 
         if (preg_match_all('/family=([^?:]*):/i', $paramsFontScheme, $matches) > 0) {
-            $fontStyles = '--cassiopeia-font-family-body: "' . str_replace('+', ' ', $matches[1][0]) . '", sans-serif;
-			--cassiopeia-font-family-headings: "' . str_replace('+', ' ', $matches[1][1] ?? $matches[1][0]) . '", sans-serif;
-			--cassiopeia-font-weight-normal: 400;
-			--cassiopeia-font-weight-headings: 700;';
+            $fontStyles = '--dp_template-font-family-body: "' . str_replace('+', ' ', $matches[1][0]) . '", sans-serif;
+			--dp_template-font-family-headings: "' . str_replace('+', ' ', $matches[1][1] ?? $matches[1][0]) . '", sans-serif;
+			--dp_template-font-weight-normal: 400;
+			--dp_template-font-weight-headings: 700;';
         }
     } else {
         $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, ['version' => 'auto'], ['rel' => 'lazy-stylesheet']);
@@ -54,7 +54,7 @@ if ($paramsFontScheme) {
 }
 
 // Enable assets
-$wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
+$wa->usePreset('template.dp_template.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
     ->useStyle('template.active.language')
     ->useStyle('template.offline')
     ->useStyle('template.user')
@@ -70,7 +70,7 @@ $wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'l
 	}");
 
 // Override 'template.active' asset to set correct ltr/rtl dependency
-$wa->registerStyle('template.active', '', [], [], ['template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
+$wa->registerStyle('template.active', '', [], [], ['template.dp_template.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
 // Logo file or site title param
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');

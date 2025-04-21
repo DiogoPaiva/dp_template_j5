@@ -84,7 +84,7 @@ a.jwts_title_text, a.jwts_title_text:link, a.jwts_title_text:hover {font-size: 1
 #header	{background:none;}
 #logo span{	color:#555 !important;	margin-top:6px;	font-size:0.4em !important;	letter-spacing:1px}
 #header-image{min-height:20px;}
-#logo{background: url("../images/logo.png") no-repeat scroll 0 0 transparent;float: left;font-size: 3em;height: 85px;margin: 0 14px 25px 0;width: 270px;position: relative;top: -20px;}
+#logo{background: url("../../images/logo.png") no-repeat scroll 0 0 transparent;float: left;font-size: 3em;height: 85px;margin: 0 14px 25px 0;width: 270px;position: relative;top: -20px;}
 #header #line form,
 #header #line #fontsize,
 #header #line form .search {display:inline !important;}
@@ -139,7 +139,7 @@ div.moduletablecaminho {
   position: relative;
   text-align: left;
   width: 100%;
-  background: url(../images/sombra.png) no-repeat bottom center;
+  background: url(../../images/sombra.png) no-repeat bottom center;
 
   a, span {
     color: #ccc;
@@ -339,7 +339,7 @@ ul#archive-items li.row1{border-bottom:solid 1px #ddd}
       margin-left: 50px !important;
     }
 
-    background: url("../images/sombra.png") repeat-x scroll center -17px #000000;
+    background: url("../../images/sombra.png") repeat-x scroll center -17px #000000;
     display: block;
     margin: 0 auto;
     padding-top: 12px !important;
@@ -509,11 +509,11 @@ ul#archive-items li.row1{border-bottom:solid 1px #ddd}
 
   .roktabs.light {
     .active-arrows {
-      background: url("../images/sombra.png") no-repeat center 25px transparent;
+      background: url("../../images/sombra.png") no-repeat center 25px transparent;
       padding-bottom: 40px;
 
       .arrow-prev {
-        background: url("../images/interface.png") no-repeat scroll 0 -44px transparent !important;
+        background: url("../../images/interface.png") no-repeat scroll 0 -44px transparent !important;
         cursor: pointer;
         float: left;
         height: 14px;
@@ -618,7 +618,7 @@ ul#archive-items li.row1{border-bottom:solid 1px #ddd}
     display: block;
     clear: both;
     height: 40px;
-    background: url(../images/sombra.png) no-repeat center 10px transparent;
+    background: url(../../images/sombra.png) no-repeat center 10px transparent;
     width: 100%;
   }
 }
@@ -962,7 +962,7 @@ body
     font-size: 100.1%;
     padding: 0px;
     text-align: center;
-	background: url(../images/bk_02.jpg) no-repeat center top #000;
+	background: url(../../images/bk_01.jpg) no-repeat center top #000;
 	color: #ccc;
 	height:100%;
 }
@@ -1071,7 +1071,7 @@ h1#logo{font-size:3.5em;line-height:1.0em;}
 /* ###################### main ###################### */
 #caixas1 { width:100%; height: 240px;}
 #caixas2 { width: 100%;}
-#caixastop {background: url("../images/sombra.png") no-repeat scroll center top transparent;
+#caixastop {background: url("../../images/sombra.png") no-repeat scroll center top transparent;
 height: 236px;
 padding-top: 30px;
 width: 100%;} 
@@ -1080,14 +1080,14 @@ width: 100%;}
 .box1, .box2{ float: left; width: 320px; margin-right: 10px;}
 .box3 { float: left; width: 320px;}
 .box4, .box5, .caixatop1, .caixatop2 {float: left;}
-.caixatop1, .caixatop2 {width: 485px;  background: url("../images/box01.png") repeat-x scroll left top transparent;height: 236px;}
+.caixatop1, .caixatop2 {width: 485px;  background: url("../../images/box01.png") repeat-x scroll left top transparent;height: 236px;}
 .caixatop2 {margin-left: 10px;}
 .box6, .caixatop3{float: right;}
 .box9 {float: left; width: 22%;height: 170px;}
 .box11 { float: left;  width: 45%;height: 170px;}
 .box10 { float: right;  width: 33%;height: 170px;}
 /* ##########################  general  ########################### */
-#footer-inner {background:url("../images/sombra.png") repeat-x scroll center top #000000; height:170px; padding-top: 30px;width:980px; margin:0 auto; font-size:0.8em;}
+#footer-inner {background:url("../../images/sombra.png") repeat-x scroll center top #000000; height:170px; padding-top: 30px;width:980px; margin:0 auto; font-size:0.8em;}
 
 img { border: 0 none; }
 h3{ font-size:1.1em;font-weight:bold; margin:10px 0;}

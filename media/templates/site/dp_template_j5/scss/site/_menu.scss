@@ -1,0 +1,334 @@
+@use "variables" as *;
+
+/* ##########################  MENU  ########################### */
+
+/* MENU Inicio ////////////////////////*/
+.menu-hor {
+    background: url("../../images/menu-barra-1.png") no-repeat scroll center top transparent;
+    height: 64px;
+    position: relative;
+    width: 980px;
+    z-index: 100;
+    
+    ul {
+      li {
+        list-style: none;
+        width: 100px;
+        float: left;
+        background: none;
+      }
+    }
+  }
+  
+  
+  
+  /******************* MENU LEFT ***************/
+  .moduletable_menu_left {
+    ul.menu {
+      width: 210px;
+      
+      li {
+        ul {
+          li {
+            background: none;
+            list-style: none outside none;
+          }
+        }
+        
+        span.separator {
+          display: block;
+          font-size: 22px;
+          margin-bottom: 5px;
+          margin-top: 15px;
+        }
+        
+        a {
+          padding: 3px 2px 3px 0 !important;
+          font-weight: normal !important;
+        }
+      }
+  }
+}
+  
+  /* #############  Menu Footer (fundo)  ############# */
+  .menumenu_footer {
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    height: 140px;
+    margin: 0;
+  }
+  
+  /* #############  Menu FOOTER Esquerda   ############# */
+  .moduletable_footer_left {
+    float: left;
+    width: 170px;
+    margin-top: 15px;
+    
+    h3 {
+      color: $gray-medium;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+      text-decoration: underline;
+      padding: 0;
+      text-align: left;
+      text-indent: 0;
+    }
+    
+    ul.menu {
+      text-align: left;
+      padding-left: 0px;
+      list-style: none;
+      margin-top: 20px;
+      
+      li {
+        height: 22px;
+        text-align: left;
+        
+        a {
+          display: inline-block !important;
+          text-transform: uppercase;
+          color: $gray-medium;
+          text-decoration: none;
+          font-size: 12px;
+          text-align: left;
+          padding: 0px !important;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        
+        &.active {
+          a:link,
+          a:visited {
+            font-weight: bold;
+            background-color: none;
+            color: $primary-color;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+  
+  .menumenu_footer {
+    li {
+      &.current,
+      &.active,
+      & {
+        background: none repeat scroll 0 0 transparent;
+        color: $gray-medium;
+        display: block;
+        float: none;
+        font-size: 11px;
+        list-style: none outside none;
+        margin-bottom: 3px;
+        margin-right: 3px;
+        padding: 0 8px;
+        text-align: left;
+        text-transform: uppercase;
+        
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff;
+        }
+      }
+      
+      ul {
+        background: none;
+      }
+    }
+  }
+  
+  .menuitem {
+    padding-top: 4px;
+  }
+  
+  /* ++++++++++++++  first level  ++++++++++++++ */
+  #nav {
+    .moduletable-example {
+      ul.menu {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    
+    ul.menu {
+      list-style-type: none !important;
+      margin: 0 0 10px 0;
+      padding: 0px;
+      
+      li {
+        a:link,
+        a:visited {
+          display: block;
+          padding: 7px 4px 7px 15px;
+          text-decoration: none;
+          font-size: 12px;
+          font-weight: normal;
+        }
+        
+        &.active {
+          a:link,
+          a:visited {
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+        
+        a:hover,
+        a:active,
+        a:focus,
+        &.active a:hover,
+        &.active a:active,
+        &.active a:focus {
+          color: #fff;
+        }
+      }
+      
+      .module_content {
+        ul.menu {
+          margin-left: -5px;
+          padding: 10px 0 0 0;
+          border: 0;
+        }
+      }
+    }
+  }
+  
+  /* ++++++++++++++  second level  ++++++++++++++ */
+  ul.menu {
+    li {
+      ul {
+        margin: 0;
+        padding: 0;
+        
+        li {
+          margin: 0;
+          padding: 0;
+          
+          a:link,
+          a:visited {
+            padding: 5px 10px 5px 20px;
+            font-weight: normal;
+            
+            &.active {
+              padding: 7px 10px 7px 20px;
+            }
+          }
+          
+          &.active {
+            a:link,
+            a:visited {
+              color: $primary-color;
+              border: 0;
+            }
+            
+            a:hover {
+              color: #fff !important;
+            }
+          }
+        }
+        
+        border: solid 0px #eee;
+        
+        li {
+          border: solid 0px #000;
+        }
+      }
+    }
+  }
+  
+  /* ++++++++++++++  third level  ++++++++++++++ */
+  ul.menu {
+    li {
+      ul {
+        li {
+          ul {
+            padding: 5px 0;
+            
+            li {
+              a:link,
+              a:visited {
+                background: #f5f5f5;
+                border-bottom: solid 1px #fff;
+                color: #444;
+                padding: 5px 4px 5px 30px;
+                font-weight: normal;
+                
+                &.active {
+                  color: #333;
+                  font-weight: normal;
+                }
+              }
+            }
+            
+            border: 0 !important;
+            background: #f5f5f5 !important;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  
+  /* ++++++++++++++  fourth level  ++++++++++++++ */
+  ul.menu {
+    li {
+      ul {
+        li {
+          ul {
+            li {
+              ul {
+                li {
+                  ul {
+                    border: solid 1px #eee !important;
+                    padding-top: 10px !important;
+                    padding-bottom: 10px !important;
+                    background: #fff url(../images/level4.png) repeat-x !important;
+                    
+                    a:link,
+                    a:visited {
+                      font-weight: normal;
+                      padding: 3px 2px 3px 40px;
+                      font-size: 0.9em;
+                      background: #fff url(../images/arrow_small.png) no-repeat 30px 5px;
+                      color: #444;
+                    }
+                    
+                    &.active {
+                      a:link,
+                      a:visited {
+                        font-weight: normal;
+                        color: #333;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* ################ FOOTER ################# */
+  
+  ul.menumenufooter {
+    li {
+      float: left;
+      list-style: none;
+      font-size: 11px;
+      color: #333;
+      background-color: #ebebeb;
+      margin-right: 7px;
+      padding: 4px;
+      
+      a:hover {
+        color: #000;
+      }
+    }
+}

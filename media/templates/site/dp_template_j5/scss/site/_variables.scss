@@ -1,0 +1,41 @@
+// VARIABLES
+// Colors
+$primary-color: #64C1CE;
+$secondary-color: #00579D;
+$dark-bg: #000000;
+$light-bg: #f5f5f5;
+$white: #fff;
+$gray-light: #eee;
+$gray-medium: #ccc;
+$gray-dark: #444;
+$red: #C00;
+$blue-dark: #000066;
+
+// Sizes
+$border-radius-base: 4px;
+$transition-speed: 0.5s;
+$transition-ease: ease;
+
+// Mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin transition($property, $duration, $ease) {
+  transition: $property $duration $ease;
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -o-transition: $property $duration $ease;
+}
+
+@mixin gradient($top, $bottom) {
+  background: $top;
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%);
+}

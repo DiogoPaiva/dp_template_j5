@@ -173,22 +173,6 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
             <?php endif; ?>
             <div style="clear: both"></div>
 
-            <?php if ($this->countModules('caixatop-1') || $this->countModules('caixatop-2')): ?>
-                <div id="caixastop">
-                    <?php if ($this->countModules('caixatop-1')): ?>
-                        <div class="caixatop1">
-                            <jdoc:include type="modules" name="caixatop-1" style="xhtml" />
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($this->countModules('caixatop-2')): ?>
-                        <div class="caixatop2">
-                            <jdoc:include type="modules" name="caixatop-2" style="xhtml" />
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
-            <div style="clear: both"></div>
-
             <div id="contentarea">
                 <?php if ($this->countModules('left')): ?>
                     <div id="left">
@@ -197,7 +181,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                 <?php endif; ?>
 
                 <div <?php
-                $classes = [];
+                $classes = ["full-content"];
                 if ($this->countModules('left')) {
                     $classes[] = 'has-sidebar-left';
                 }
@@ -213,26 +197,6 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
                 <?php if ($this->countModules('right')): ?>
                     <div id="right">
                         <jdoc:include type="modules" name="right" style="xhtml" />
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($this->countModules('position-6') || $this->countModules('position-7') || $this->countModules('position-8')): ?>
-                    <div id="caixas2">
-                        <?php if ($this->countModules('position-6')): ?>
-                            <div class="box4">
-                                <jdoc:include type="modules" name="position-6" style="xhtml" />
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($this->countModules('position-7')): ?>
-                            <div class="box5">
-                                <jdoc:include type="modules" name="position-7" style="xhtml" />
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($this->countModules('position-8')): ?>
-                            <div class="box6">
-                                <jdoc:include type="modules" name="position-8" style="xhtml" />
-                            </div>
-                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>

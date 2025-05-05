@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout title="Discography Layout" option="com_content">
+    <message>
+        <![CDATA[This layout displays only intro images for discography articles.]]>
+    </message>
+</layout>

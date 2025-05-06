@@ -104,6 +104,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 <head>
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
     <jdoc:include type="scripts" />
 </head>
 
@@ -121,37 +122,30 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
         <div id="main-section">
             <div id="header">
                 <div class="topo">
-                    <div class="logoheader">
-                        <a href="<?php echo $this->baseurl; ?>/">
-                            <div id="logo">&nbsp;</div>
-                        </a>
-                    </div>
                     <div class="menu-hor">
                         <jdoc:include type="modules" name="menu-hor" style="xhtml" />
                     </div>
-                    <?php if ($this->countModules('pesq_1')): ?>
-                        <div class="pesq">
-                            <jdoc:include type="modules" name="pesq_1" style="xhtml" />
+                    <div class="logo-slogan-container">
+                        <div class="logoheader">
+                            <a href="<?php echo $this->baseurl; ?>/">
+                                <div id="logo">&nbsp;</div>
+                            </a>
                         </div>
-                    <?php endif; ?>
-
-                    <?php if ($this->countModules('opcoes')): ?>
-                        <div id="opcoes">
-                            <jdoc:include type="modules" name="opcoes" style="xhtml" />
+                        <div class="slogan">
+                            <img src="images/ground-feel.png" width="353" height="36" loading="lazy"
+                                data-path="local-images:/ground-feel.png">
                         </div>
-                    <?php endif; ?>
-                </div>
-                <?php if ($this->countModules('banner')): ?>
-                    <div id="bannertopo">
-                        <jdoc:include type="modules" name="banner" style="xhtml" />
                     </div>
-                <?php endif; ?>
+                    <div id="breadcrumbs">
+                        <jdoc:include type="modules" name="caminho" style="xhtml" />
+                    </div>
+                </div>
             </div><!-- end header -->
-
-            <div id="breadcrumbs">
-                <jdoc:include type="modules" name="caminho" style="xhtml" />
-            </div>
-
+            <?php if ($this->countModules('banner')): ?>
+                <div id="bannertopo">
+                    <jdoc:include type="modules" name="banner" style="xhtml" />
+                </div>
+            <?php endif; ?>
             <?php if ($this->countModules('position-1') || $this->countModules('position-2') || $this->countModules('position-3')): ?>
                 <div id="caixas1">
                     <?php if ($this->countModules('position-1')): ?>
@@ -207,21 +201,23 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
     <div id="footer-outer">
         <div id="footer-inner">
             <div id="bottom">
-                <?php if ($this->countModules('position-4')): ?>
-                    <div class="box9">
-                        <jdoc:include type="modules" name="position-4" style="xhtml" />
-                    </div>
-                <?php endif; ?>
-                <?php if ($this->countModules('position-9')): ?>
-                    <div class="box11">
-                        <jdoc:include type="modules" name="position-9" style="xhtml" />
-                    </div>
-                <?php endif; ?>
-                <?php if ($this->countModules('position-5')): ?>
-                    <div class="box10">
-                        <jdoc:include type="modules" name="position-5" style="xhtml" />
-                    </div>
-                <?php endif; ?>
+                <div id="caixas-footer">
+                    <?php if ($this->countModules('position-4')): ?>
+                        <div class="box4">
+                            <jdoc:include type="modules" name="position-4" style="xhtml" />
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($this->countModules('position-5')): ?>
+                        <div class="box5">
+                            <jdoc:include type="modules" name="position-5" style="xhtml" />
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($this->countModules('position-6')): ?>
+                        <div class="box6">
+                            <jdoc:include type="modules" name="position-6" style="xhtml" />
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>

@@ -4,18 +4,58 @@
 
 /* MENU Inicio ////////////////////////*/
 .menu-hor {
-    background: url("../../images/menu-barra-1.png") no-repeat scroll center top transparent;
-    height: 64px;
+    background: url(../../images/sombra.png) no-repeat bottom center;
+    height: 59px;
     position: relative;
-    width: 980px;
-    z-index: 100;
-    
+    margin-top: 0px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding-left: 25px;
     ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; 
+      align-items: center;            
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 38px;
+      margin: 0 auto;
       li {
+        flex: 1;
+        text-align: center;
         list-style: none;
         width: 100px;
-        float: left;
         background: none;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 2px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 3px;
+          background-color: $dark-bg;
+          @include transition(width, 0.5s, ease);
+          border-radius: 2px;
+        }
+    
+        &:hover::after,
+        &.current::after {
+          width: 100%;
+        }
+        a {
+          font-size: 16px;
+          font-weight: normal;
+          text-decoration: none;
+          text-transform: uppercase;
+          display: block;
+          padding: 1rem 0;
+          z-index: 1;
+          color: $dark-bg;             
+        }
       }
     }
   }

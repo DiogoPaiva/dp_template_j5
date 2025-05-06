@@ -1,0 +1,26 @@
+.fade-carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    .fade-carousel-inner {
+        position: relative;
+        height: 435px;
+        .fade-carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            &.active {
+                opacity: 1;
+              }
+              img {
+                width: 100%;
+                display: block;
+              }
+          }
+      }
+  }
+  

@@ -39,3 +39,8 @@ $transition-ease: ease;
   background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
   background: linear-gradient(to bottom, $top 0%, $bottom 100%);
 }
+
+ // Placeholder for full-width behavior
+ %full-width {
+  flex: 1 1 100%;
+}

@@ -12,6 +12,11 @@
   
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   background-color: $white;
 }
@@ -24,6 +29,31 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  border: 0 none;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+fieldset {
+  margin: 10px 0;
+  padding: 15px 0px;
+}
+
+p {
+  line-height: 1.7em;
+  margin: 8px 0;
+}
+
+em {
+  font-weight: bold;
 }
 
 

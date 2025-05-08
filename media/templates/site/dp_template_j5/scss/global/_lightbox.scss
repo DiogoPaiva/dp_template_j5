@@ -1,0 +1,51 @@
+/* Lightbox Overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999;
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Hide initially */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth fade-in/fade-out */
+}
+
+.lightbox-overlay.active {
+    opacity: 1; /* Fully opaque */
+    visibility: visible; /* Show */
+}
+
+/* Lightbox Image */
+#lightbox-image {
+    max-width: 90%; /* Ensure the image doesn't overflow the screen */
+    max-height: 90%; /* Ensure the image doesn't overflow the screen */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth scaling and fading */
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start smaller */
+}
+
+.lightbox-overlay.active #lightbox-image {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Full size */
+}
+
+/* Close Button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; /* Smooth hover effect */
+    z-index: 10000; /* Ensure the close button is above the image */
+}
+
+.lightbox-close:hover {
+    color: red; /* Change color on hover */
+}

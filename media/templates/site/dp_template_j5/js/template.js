@@ -22,6 +22,7 @@ Joomla = window.Joomla || {};
       }
     });
   }
+
   document.addEventListener('DOMContentLoaded', event => {
     initTemplate(event);
 

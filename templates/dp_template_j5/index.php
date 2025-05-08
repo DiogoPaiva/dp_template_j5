@@ -13,6 +13,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 $app = Factory::getApplication();
+$doc = Factory::getDocument();
 $input = $app->getInput();
 $wa = $this->getWebAssetManager();
 // Browsers support SVG favicons
@@ -31,37 +32,7 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 // Color Theme
 $paramsColorName = $this->params->get('colorName', 'colors_standard');
 $assetColorName = 'theme.' . $paramsColorName;
-// Use a font scheme if set in the template style options
-$paramsFontScheme = $this->params->get('useFontScheme', false);
-$fontStyles = '';
-if ($paramsFontScheme) {
-    if (stripos($paramsFontScheme, 'https://') === 0) {
-        $this->getPreloadManager()->preconnect('https://fonts.googleapis.com/', ['crossorigin' => 'anonymous']);
-        $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', ['crossorigin' => 'anonymous']);
-        $this->getPreloadManager()->preload($paramsFontScheme, ['as' => 'style', 'crossorigin' => 'anonymous']);
-        $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, [], ['rel' => 'lazy-stylesheet', 'crossorigin' => 'anonymous']);
-        if (preg_match_all('/family=([^?:]*):/i', $paramsFontScheme, $matches) > 0) {
-            $fontStyles = '--dp_template_j5-font-family-body: "' . str_replace('+', ' ', $matches[1][0]) . '", sans-serif;
-            --dp_template_j5-font-family-headings: "' . str_replace('+', ' ', $matches[1][1] ?? $matches[1][0]) . '", sans-serif;
-            --dp_template_j5-font-weight-normal: 400;
-            --dp_template_j5-font-weight-headings: 700;';
-        }
-    } elseif ($paramsFontScheme === 'system') {
-        $fontStylesBody = $this->params->get('systemFontBody', '');
-        $fontStylesHeading = $this->params->get('systemFontHeading', '');
-        if ($fontStylesBody) {
-            $fontStyles = '--dp_template_j5-font-family-body: ' . $fontStylesBody . ';
-            --dp_template_j5-font-weight-normal: 400;';
-        }
-        if ($fontStylesHeading) {
-            $fontStyles .= '--dp_template_j5-font-family-headings: ' . $fontStylesHeading . ';
-            --dp_template_j5-font-weight-headings: 700;';
-        }
-    } else {
-        $wa->registerAndUseStyle('fontscheme.current', $paramsFontScheme, ['version' => 'auto'], ['rel' => 'lazy-stylesheet']);
-        $this->getPreloadManager()->preload($wa->getAsset('style', 'fontscheme.current')->getUri() . '?' . $this->getMediaVersion(), ['as' => 'style']);
-    }
-}
+
 // Enable assets
 $wa->usePreset('template.dp_template_j5.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr'))
     ->useStyle('template.active.language')
@@ -97,6 +68,16 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 $stickyHeader = $this->params->get('stickyHeader') ? 'position-sticky sticky-top' : '';
 // Defer fontawesome for increased performance. Once the page is loaded javascript changes it to a stylesheet.
 $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
+
+// Add the script with versioning and defer attributes
+$doc->addScript(
+    '/media/templates/site/dp_template_j5/js/lightbox.js',
+    ['version' => 'auto', 'defer' => true]
+);
+$doc->addScript(
+    '/media/templates/site/dp_template_j5/js/slide.js',
+    ['version' => 'auto', 'defer' => true]
+);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">

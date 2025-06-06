@@ -319,6 +319,42 @@
   }
   
   // BIOGRAFIA
+  .biography-blog-list {
+    .blog-item {
+      margin-bottom: 30px;
+      .page-header {
+        h2 {
+          font-size: 34px;
+          margin-bottom: 40px;
+        }
+      }
+      .biography-page {
+        display: flex;
+        flex-direction: row;
+        .side-image {
+          min-width: 270px;
+          width: 25%;
+          position: relative;
+          img {
+            position: absolute;
+            left: -50px;
+            width: 100%;
+          }
+        }
+        .center-text {
+          width: 75%;
+          font-size: 17px;
+          line-height: 1.4em;
+        }
+        .right-text {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+
+
   .article-contentbiog div div div ul li span {
     font-size: 50px !important;
   }
@@ -772,74 +808,74 @@
     border: solid 1px #ddd;
     padding: 2px;
   }
-  
-
-  .slide-title {
-    display: block;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
 
   // DISCOGRAFIA
   .album {
      #main-disc {
-    margin-left: 10px;
-    min-height: 350px;
-    width: 99%;
-    display: flex;
-    flex-direction: row;
+      margin-left: 10px;
+      min-height: 350px;
+      width: 99%;
+      display: flex;
+      flex-direction: row;
     
-    .esq {
-      width: 250px;
-      margin-right: auto;
-    }
-    
-    .dir {
-      width: 100%;
-      .musica_wrapper {
-        width: 100%;
-      }
-      
-      .musica {
-        overflow: hidden;
-        transition: max-height 0.5s ease-out;
-        border: 1px solid #222;
-       
-        &.collapsed {
-          max-height: 0;
+      .left {
+        width: 25%;
+        min-width: 250px;
+        margin-right: 5%;
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 0 none;
+          min-width: 250px;
+          display: block;
         }
-      
-      
-      .audio {
-        width: 100%;
-        audio {
+      }
+    
+      .right {
+        width: 75%;
+        .musica_wrapper {
           width: 100%;
+          .slide-title {
+            display: block;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 4px 0;
+            padding: 6px 0;
+          } 
         }
-      }
       
-      .mus_download {
-        position: relative;
-        top: 6px;
-        width: 85px;
+        .musica {
+          overflow: hidden;
+          transition: height 0.5s ease-out;
+          border: 1px solid #222;
         
-        a {
-          text-decoration: none !important;
+          &.collapsed {
+            height: 0;
+            transition: height 0.5s ease-out;
+          }
+          &.opened {
+            height: 46px;
+            transition: height 0.5s ease-out;
+          }
+          .audio {
+            width: 100%;
+            audio {
+              width: 100%;
+            }
+          }
+          .mus_download {
+            position: relative;
+            top: 6px;
+            width: 85px;
+            
+            a {
+              text-decoration: none !important;
+            }
+          }
         }
       }
     }
-    }
-  }
-  }
- 
-  
-  .jcemediabox-zoom-link {
-    display: none !important;
-  }
-  
-  .musica_wrapper div.jwts_toggleControlContainer a.jwts_toggleControl {
-    display: inline-block !important;
   }
   
   .discografia_list {
@@ -847,7 +883,6 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
     margin: 0 auto;
     .disco {
       display: block;
@@ -875,7 +910,10 @@
         height: 200px;
         width: 200px;
         overflow: hidden;
-        
+        border: 1px solid #ffffff38;
+        padding: 0px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 18px -3px #ffffff5e;
         img.imagem_disc {
           width: 200px;
           height: auto;
@@ -890,127 +928,88 @@
   }
   
   // LIVE REVIEWS
-  .tabs_reviews {
-    .jwts_toggleControlContainer {
-      width: 100%;
-      display: block;
+  .live-reviews-list {
+    .page-header {
+      h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
     }
-    
-    .roktabs.light {
-      .active-arrows {
-        background: url("../../images/sombra.png") no-repeat center 25px transparent;
-        padding-bottom: 40px;
+    .lr_block {
+        width: 100%;
+        min-height: 220px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .flyer {
+          width: 170px;
+          height: 100%;
+            flex: 1 1 14%;
+        }
         
-        .arrow-prev {
-          background: url("../../images/interface.png") no-repeat scroll 0 -44px transparent !important;
-          cursor: pointer;
-          float: left;
-          height: 14px;
-          border: none !important;
-          margin: 0 0 0 4px;
-          top: 8px;
-          text-indent: -999em;
-          width: 14px;
+        .center_area {
+          width: 500px;
+          height: 100%;
+          margin-right: 20px;
+            flex: 1 1 55%;
+          .textolive {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+          }
           
-          &:hover {
-            background-position: 0 -58px;
+          .event_content {
+            width: 100%;
+            height: 30px;
           }
         }
         
-        .arrow-next {
-          background: url("../../images/interface.png") no-repeat scroll 0 -16px transparent !important;
-          cursor: pointer;
-          float: left;
-          top: 8px;
-          height: 14px;
-          margin: 0 0 0 4px;
-          text-indent: -999em;
-          border: none !important;
-          width: 14px;
+        .event_detail {
+          width: 190px;
+          height: 100%;
+            flex: 1 1 22%;
           
-          &:hover {
-            background-position: 0 -30px;
+          .linha {
+            display: block;
+            clear: both;
+            line-height: 19px;
+            font-size: 16px;
+            
+            .ico_photos {
+              background: url("../../../images/icons/image-balloon.png") no-repeat scroll center bottom transparent;
+              display: inline-block;
+              height: 20px;
+              margin-right: 4px;
+              position: relative;
+              top: 5px;
+              width: 20px;
+            }
+            
+            .ico_videos {
+              background: url("../../../images/icons/films.png") no-repeat center center;
+              display: inline-block;
+              height: 20px;
+              margin-right: 4px;
+              position: relative;
+              top: 5px;
+              width: 20px;
+            }
           }
         }
         
-        .roktabs-links {
-          margin: 0 30px !important;
-          width: 850px !important;
+        .live_separator {
+          flex: 0 0 100%;
+          height: 40px;
+          background: url(../../images/sombra.png) no-repeat center 10px transparent;
+          width: 100%;
         }
       }
-    }
   }
-  
-  .lr_block {
-    width: 880px;
-    min-height: 220px;
-    margin-top: 20px;
-    
-    .flyer {
-      width: 170px;
-      float: left;
-      height: 100%;
-    }
-    
-    .center_area {
-      width: 500px;
-      float: left;
-      height: 100%;
-      margin-right: 20px;
-      
-      .textolive {
-        width: 100%;
-        height: 100%;
-        display: block;
-        margin-bottom: 15px;
-      }
-      
-      .event_content {
-        width: 100%;
-        height: 30px;
-      }
-    }
-    
-    .event_detail {
-      width: 190px;
-      float: left;
-      height: 100%;
-      
-      .linha {
-        display: block;
-        clear: both;
-        line-height: 19px;
-        
-        .ico_photos {
-          background: url("../../../images/icons/image-balloon.png") no-repeat scroll center bottom transparent;
-          display: inline-block;
-          height: 20px;
-          margin-right: 4px;
-          position: relative;
-          top: 5px;
-          width: 20px;
-        }
-        
-        .ico_videos {
-          background: url("../../../images/icons/films.png") no-repeat center center;
-          display: inline-block;
-          height: 20px;
-          margin-right: 4px;
-          position: relative;
-          top: 5px;
-          width: 20px;
-        }
-      }
-    }
-    
-    .live_separator {
-      display: block;
-      clear: both;
-      height: 40px;
-      background: url(../../images/sombra.png) no-repeat center 10px transparent;
-      width: 100%;
-    }
-  }
+ 
   
   // HEADINGS
   #main h1 {
@@ -1402,9 +1401,9 @@
 // Parent container styles
 #contentarea {
   margin-top: 0px;
-  padding: 0px;
+  padding: 50px;
   margin-bottom: 0px;
-  width: 100%;
+  width: auto;
   height: 100%;
   background: 
   linear-gradient(
@@ -1421,10 +1420,9 @@
     rgba(0, 0, 0, 0.7) 75%,
     rgba(0, 0, 0, 0) 100%
   );
- background-blend-mode: multiply;
+    background-blend-mode: multiply;
     display: flex; // Use Flexbox for layout
     flex-wrap: wrap; // Allow wrapping if necessary
-    width: 100%; // Full width of the viewport
 
     // Main content area (flex-grow ensures it takes remaining space)
     .full-content {
@@ -1444,6 +1442,10 @@
         &.has-sidebar-left.has-sidebar-right {
             flex-basis: calc(100% - ($sidebar-width * 2)); // Subtract both sidebars' width
         }
+        h1 {
+          font-size: 40px;
+          margin-bottom: 30px;
+        }
     }
 
     // Sidebar styles
@@ -1455,10 +1457,6 @@
     }
 }
 
-
-
-
- 
   a:link,
   a:visited {
     color: $primary-color;
@@ -1503,6 +1501,7 @@
   }
   
   // NAVIGATION
+  /*
   .left {
     padding-top: 0px;
     float: left;
@@ -1523,7 +1522,7 @@
     width: 25%;
     float: left;
   }
-  
+  */
   // HEADER
   .wrap {
     border: 0;

@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to collapse a musica section
     function collapseMusica(musica) {
         musica.classList.add('collapsed');
-        musica.style.maxHeight = null;
+         musica.classList.remove('opened');
     }
 
     // Function to expand a musica section
     function expandMusica(musica) {
         musica.classList.remove('collapsed');
-        musica.style.maxHeight = musica.scrollHeight + 'px';
+        musica.classList.add('opened');
     }
 
     // Add click event to each slide title

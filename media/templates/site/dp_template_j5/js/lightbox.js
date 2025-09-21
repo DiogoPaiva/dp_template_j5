@@ -68,28 +68,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to open the lightbox
     function openLightbox(event) {
-        event.preventDefault();
-        const trigger = event.target.closest(".lightbox-trigger");
-        const targetSrc = trigger.getAttribute("href");
-        if (!targetSrc) return;
+    event.preventDefault();
+    const trigger = event.target.closest(".lightbox-trigger");
+    const targetSrc = trigger.getAttribute("href");
 
-        // Check if this is part of a gallery
-        const gallery = trigger.closest('.gallery-grid');
-        
-        if (!lightbox.classList.contains("active")) {
+    if (!targetSrc) return;
+
+    // Check if the URL is a YouTube video
+    const isVideo = targetSrc.includes('youtube.com') || targetSrc.includes('youtu.be');
+
+    if (!lightbox.classList.contains("active")) {
+        lightbox.classList.add("active");
+
+        if (isVideo) {
+            // Show video in iframe
+            lightboxImage.style.display = "none";
+           // Extrai apenas o ID do vídeo da URL
+			const videoId = targetSrc.match(/[?&]v=([^&]+)/)[1];
+
+			lightbox.querySelector('.lightbox-content').innerHTML = `
+				<iframe 
+					src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
+					allowfullscreen 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					style="width: 100%; height: 100%; border: none;"
+				></iframe>
+			`;	
+        } else {
+            // Show image
             lightboxImage.src = targetSrc;
-            lightbox.classList.add("active");
-            
-            // Setup gallery navigation if in gallery
-            if (gallery) {
-                setupGalleryNavigation(gallery, trigger);
-            } else {
-                removeGalleryNavigation();
-            }
-            
-            disableScroll();
+            lightboxImage.style.display = "block";
+            lightbox.querySelector('.lightbox-content').innerHTML = '';
         }
+
+        // Setup gallery navigation if in gallery
+        const gallery = trigger.closest('.gallery-grid');
+        if (gallery) {
+            setupGalleryNavigation(gallery, trigger);
+        } else {
+            removeGalleryNavigation();
+        }
+
+        disableScroll();
     }
+}
 
     // Setup gallery navigation
     function setupGalleryNavigation(gallery, currentTrigger) {
@@ -152,13 +174,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to close the lightbox
     function closeLightbox() {
-        if (lightbox.classList.contains("active")) {
-            lightbox.classList.remove("active");
-            lightboxImage.src = "";
-            removeGalleryNavigation();
-            enableScroll();
-        }
-    }
+		if (lightbox.classList.contains("active")) {
+			lightbox.classList.remove("active");
+			lightboxImage.src = "";
+			lightbox.querySelector('.lightbox-content').innerHTML = '';
+			removeGalleryNavigation();
+			enableScroll();
+		}
+	}
 
     // Disable scrolling
     function disableScroll() {

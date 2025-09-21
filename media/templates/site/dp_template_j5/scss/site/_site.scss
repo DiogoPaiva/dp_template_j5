@@ -765,40 +765,6 @@
     }
   }
   
-  .foto_gal {
-    img {
-      height: 310px;
-      width: auto;
-    }
-    
-    border: 5px solid #CCCCCC;
-    @include border-radius(158px);
-    height: 300px;
-    margin: 0 auto;
-    overflow: hidden;
-    width: 300px;
-    
-    .ppg_thb,
-    .ppg_thb_noshadow,
-    .ppg_thb_canvas_border,
-    .ppg_thb_canvas_hover,
-    .ppg_thb_canvas {
-      img {
-        bottom: 12px !important;
-        right: 11px !important;
-      }
-    }
-    
-    .ppg_thb,
-    .ppg_thb_noshadow,
-    .ppg_thb_canvas_border,
-    .ppg_thb_border {
-      img {
-        border: none !important;
-      }
-    }
-  }
-  
   // IMAGES
   .image-left {
     padding: 2px;
@@ -878,7 +844,7 @@
     }
   }
   
-  .discografia_list {
+  .discografia_list, .galeria_list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
